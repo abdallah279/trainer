@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- Data Table -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-+qdLaIRZfNu4cVPK/PxJJEy0B0f3Ugv8i482AKY7gwXwhaCroABd086ybrVKTa0q" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.css"/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="close" id="closeSidebar"><i class="fa-solid fa-xmark"></i></div>
+        <div class="content">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="">
+            </div>
+            <ul class="links">
+                <li>
+                    <a href="home.html">
+                        <span class="icon-co">
+                            <img src="imgs/icons/home.png" alt="">
+                        </span>
+                        الرئيسية
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance-record.html" class="active">
+                        <span class="icon-co">
+                            <img src="imgs/icons/trainer.png" alt="">
+                        </span>
+                        سجل الحضور والانصراف
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="rating.html">
+                        <span class="icon-co">
+                            <img src="imgs/icons/Teacher.png" alt="">
+                        </span>
+                       التقيم
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="courses.html">
+                        <span class="icon-co">
+                            <img src="imgs/icons/online-learning.png" alt="">
+                        </span>
+                        الشهادات
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <span class="icon-co">
+                            <img src="imgs/icons/setting.png" alt="">
+                        </span>
+                        الاعدادات
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon-co">
+                            <img src="imgs/icons/noun_logout.png" alt="">
+                        </span>
+                        تسجيل الخروج
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <nav class="navbar-me" id="navbar">
+        <div class="container-c">
+            <div class="content">
+                <div class="menu" id="menu">
+                    <img src="imgs/icons/menu.png" alt="">
+                </div>
+                <form action="">
+                    <div class="input-g">
+                        <input type="text" placeholder="كلمات مفتاحية">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </form>
+                <div class="left">
+                    <div class="not">
+                        <a href="notifications.html"></a>
+                        <img src="imgs/icons/bell.png" alt="">
+                        <span class="number">3</span>
+                    </div>
+                    <div class="account">
+                        <img src="imgs/icons/239395281_3017692991796113_2441625955612479858_n.png" alt="">
+                        <div class="info">
+                            <h3>أحمد مكاوي </h3>
+                            <span>متدرب</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-sec" id="main">
+        <div class="container-c">
+
+            <!-- Start Text Section -->
+            <div class="trainer-heading">
+                <div class="text">
+                    <h1 class="head"> سجل الحضور والانصراف</h1>
+                    <p>هذا النص هو مثال لنص يمكن تغييره</p>
+                </div>
+                <div class="wrap">
+                    <form action="">
+                        <div class="input-g">
+                            <input type="text" placeholder="كلمات مفتاحية" id="searchTable">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </form>
+                    <div class="icons" id="buttons"></div>
+                </div>
+            </div>
+
+            <div class="data">
+                <table id="myTable" class="display table" dir="rtl">
+                    <thead>
+                        <tr>
+                            <th>رقم</th>
+                            <th>الصورة</th>
+                            <th >اسم الدورة</th>
+                            <th>عدد أيام الحضور</th>
+                            <th>عدد أيام الغياب</th>
+                            <th>الأيام المتبقية</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img2.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">20</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img2.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">20</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img2.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">20</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img2.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">20</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img2.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">20</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img2.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">20</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img2.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">20</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;">5</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px 10px;">1</td>
+                            <td style="padding: 10px 10px;"><img src="imgs/course-img2.png" alt=""></td>
+                            <td style="padding: 10px 10px;">اسم الدورة</td>
+                            <td style="padding: 10px 10px;">20</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;">2</td>
+                            <td style="padding: 10px 10px;" class="drop-co"><i class="fa-solid fa-ellipsis drop-icon" onclick="sm(this)"></i>
+                                <ul class="drop-down dropDownData">
+                                    <li>
+                                        <a href="attendance-detailes.html">
+                                            <span class="icon-co"><i class="fa-solid fa-pen-to-square"></i></span>تفاصيل</a>
+                                        </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon-co">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+                                            حذف
+                                        </a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.12.1/b-2.2.3/r-2.3.0/datatables.min.js"></script>
+
+    <!-- <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script> -->
+
+    <!-- Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
+    <!-- Show All Buttons -->
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+
+    <!-- Print -->
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

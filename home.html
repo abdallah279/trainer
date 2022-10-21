@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-+qdLaIRZfNu4cVPK/PxJJEy0B0f3Ugv8i482AKY7gwXwhaCroABd086ybrVKTa0q" crossorigin="anonymous">
+
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="datePicker-position">
+    <div class="sidebar" id="sidebar">
+        <div class="close" id="closeSidebar"><i class="fa-solid fa-xmark"></i></div>
+        <div class="content">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="">
+            </div>
+            <ul class="links">
+                <li>
+                    <a href="home.html" class="active">
+                        <span class="icon-co">
+                            <img src="imgs/icons/home.png" alt="">
+                        </span>
+                        الرئيسية
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="attendance-record.html">
+                        <span class="icon-co">
+                            <img src="imgs/icons/trainer.png" alt="">
+                        </span>
+                        سجل الحضور والانصراف
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="rating.html">
+                        <span class="icon-co">
+                            <img src="imgs/icons/Teacher.png" alt="">
+                        </span>
+                       التقيم
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="courses.html">
+                        <span class="icon-co">
+                            <img src="imgs/icons/online-learning.png" alt="">
+                        </span>
+                        الشهادات
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="setting.html">
+                        <span class="icon-co">
+                            <img src="imgs/icons/setting.png" alt="">
+                        </span>
+                        الاعدادات
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon-co">
+                            <img src="imgs/icons/noun_logout.png" alt="">
+                        </span>
+                        تسجيل الخروج
+                        <i class="fa-solid fa-angle-left icon-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <nav class="navbar-me" id="navbar">
+        <div class="container-c">
+            <div class="content">
+                <div class="menu" id="menu">
+                    <img src="imgs/icons/menu.png" alt="">
+                </div>
+                <form action="">
+                    <div class="input-g">
+                        <input type="text" placeholder="كلمات مفتاحية">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </form>
+                <div class="left">
+                    <div class="not">
+                        <a href="notifications.html"></a>
+                        <img src="imgs/icons/bell.png" alt="">
+                        <span class="number">3</span>
+                    </div>
+                    <div class="account">
+                        <img src="imgs/icons/239395281_3017692991796113_2441625955612479858_n.png" alt="">
+                        <div class="info">
+                            <h3>أحمد مكاوي </h3>
+                            <span>متدرب</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-sec" id="main">
+        <div class="container-c">
+
+            <!-- Start Text Section -->
+            <div class="text">
+                <h1 class="head">لوحة التحكم</h1>
+                <p>مرحبا بك أحمد مكاوي , اهلا بعودتك</p>
+            </div>
+
+            
+            <!-- تسجيل حضور -->
+            <div class="presence-section">
+                <!-- Start Content -->
+                <div class="content">
+                    <div class="day">الأحد</div>
+                    <div class="date">
+                        <span>2022/08/10</span>
+                        -
+                        <span>15:39</span>
+                    </div>
+                    <div class="img">
+                        <img src="imgs/lf30_editor_hvit78q8.png" alt="">
+                    </div>
+
+                    <!-- زرار تسجيل الحضور -->
+                    <button class="submit" id="showModelIn">تسجيل حضور</button>
+                    
+                    
+                    <!--_____________________ زرار تسجيل الانصراف _____________________-->
+                    <!-- <span class="num">00:39</span>
+                    <button class="submit btn-red" id="showModelOut">تسجيل انصراف</button> -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Model تسجيل الحضور -->
+    <!-- Add Date -->
+    <div class="model-attend popup" id="modelAttendIn">
+        <div class="content-co">
+            <h3 class="title">طريقة تسجيل الحضور</h3>
+            <div class="buttons-att">
+                <span class="butt active" id="qrBtn">عن طريق ال qr</span>
+                <span class="butt" id="normalRegBtn">تسجيل عادى</span>
+            </div>
+            <div class="content-att">
+                <div class="add-date qr-sec model-sections active" id="qrSection">
+                    <div class="content">
+                        <form action="">
+                            <div class="input-group">
+                                <label for="selectName" class="label">اسم الدورة</label>
+                                <select name="" id="selectName">
+                                    <option value="" selected disabled>الرجاء اختيار اسم الدورة</option>
+                                    <option value="">الرجاء اختيار اسم الدورة</option>
+                                    <option value="">الرجاء اختيار اسم الدورة</option>
+                                </select>
+                            </div>
+                            <div class="qr">
+                                <img class="qr-img" src="../imgs/Group 64595.png" alt="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="normal-attend model-sections" id='normalAttendSec'>
+                    <div class="content">
+                        <form action="">
+                            <div class="input-group date-ic">
+                                <label for="">التاريخ</label>
+                                <input type="text" id="startDate" placeholder="الرجاء ادخال تاريخ الحضور">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </div>
+                            <div class="input-group date-ic">
+                                <label for="">الوقت</label>
+                                <input type="time" style="text-align: right" placeholder="الرجاء ادخال وقت الحضور">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div class="img">
+                                <img class="qr-img" src="../imgs/login.png" alt="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--_____________________ Model تسجيل الانصراف _____________________-->
+    <!-- Add Date -->
+    <div class="add-date popup" id="modelAttendOut">
+        <div class="content">
+            <div class="heading">
+                <h1 class="title title-red">تسجيل انصراف</h1>
+                <p class="txt">برجاء قراءة الـ QR Code الخاص بك</p>
+            </div>
+            <form action="">
+                <div class="qr">
+                    <img class="qr-img" src="../imgs/Group 64595.png" alt="">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add OverLay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- <script src="plugins/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+        $( function() {
+             $( "#startDate").datepicker();
+            //  $( "#endDate").datepicker();
+        });
+        // $('select').niceSelect();
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
+    <script src="js/script.js"></script>
+</body>
+</html>
