@@ -2481,6 +2481,7 @@ form .input-group .imgs{
 @media (max-width:380px) {
     .popup{
         padding: 20px ;
+        border-radius: 5px;
     }
 }
 
